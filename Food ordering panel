@@ -1,0 +1,196 @@
+from tkinter import *
+
+w=Tk()
+w.title("Restraunt Application")
+w.geometry("1255x700")
+
+def newuser():
+    entry1.delete(0,END)
+    entry2.delete(0,END)
+    
+    restartorder()
+
+#New User
+frame1=LabelFrame(w,padx=270,pady=8)
+frame1.grid(row=0,column=0)
+button1=Button(frame1,text="New User",borderwidth=10,width=10,command=newuser)
+button1.grid(row=0,column=0)
+def restartorder():
+    global total
+    total=0
+    text1.delete(1.0,END)
+    text2.delete(1.0,END)
+    text4.delete(1.0,END)
+    
+def newuser():
+    entry1.delete(0,END)
+    entry2.delete(0,END)
+    restartorder()
+
+#Details of User
+frame2=LabelFrame(w,padx=212,pady=24)
+frame2.grid(row=1,column=0)
+label1=Label(frame2,text="Name")
+label1.grid(row=0,column=0,pady=20)
+entry1=Entry(frame2,width=20)
+entry1.grid(row=0,column=1,pady=20)
+label2=Label(frame2,text="Phone Number")
+label2.grid(row=1,column=0,pady=20)
+entry2=Entry(frame2,width=20)
+entry2.grid(row=1,column=1,pady=20)
+button=Button(frame2,text="Restart Order",borderwidth=8,pady=5,command=restartorder)
+button.grid(row=2,column=1)
+
+#Types of Burgers
+frame3=LabelFrame(w,padx=10)
+frame3.grid(row=2,column=0)
+button1=Button(frame3,text="Regular Burgers",borderwidth=8,width=12,command=lambda:order(frame4,1))
+button1.grid(row=0,column=0,padx=8,pady=10)
+button2=Button(frame3,text="Large Burgers",borderwidth=8,width=12,command=lambda:order(frame4,2))
+button2.grid(row=0,column=1,padx=8,pady=10)
+button3=Button(frame3,text="Fries",borderwidth=8,width=12,command=lambda:order(frame4,3))
+button3.grid(row=0,column=2,padx=8,pady=10)
+button4=Button(frame3,text="Beverages",borderwidth=8,width=12,command=lambda:order(frame4,4))
+button4.grid(row=0,column=3,padx=8,pady=10)
+button5=Button(frame3,text="Desserts",borderwidth=8,width=12,command=lambda:order(frame4,5))
+button5.grid(row=0,column=4,padx=8,pady=10)
+
+#Menu
+frame4=LabelFrame(w)
+frame4.grid(row=3,column=0,padx=2)
+label=Label(frame4,text="Let's Get Started With Order")
+label.grid(row=0,column=0)
+
+def order(frame4,n):
+    
+    if n==1:
+        frame4.destroy()
+        frame4=LabelFrame(w,padx=61)
+        frame4.grid(row=3,column=0,padx=2)
+        button1=Button(frame4,text="Chotu Singh\nPrice=59",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Chotu Singh\n","59\n"))
+        button1.grid(row=0,column=0,padx=5,pady=5)
+        button2=Button(frame4,text="Chicken Keema\nPrice=59",bg="Red",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Chicken Keema\n","59\n"))
+        button2.grid(row=0,column=1,padx=5,pady=5)
+        button3=Button(frame4,text="Veg Snacker\nPrice=79",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Veg Snacker\n","79\n"))
+        button3.grid(row=0,column=2,padx=5,pady=5)
+        button4=Button(frame4,text="Chicken Snacker\nPrice=99",bg="Red",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Chicken Snacker\n","99\n"))
+        button4.grid(row=1,column=0,padx=5,pady=5)
+        button5=Button(frame4,text="Crispy Paneer Bhurji\nPrice=69",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Crispy Paneer Bhurji\n","69\n"))
+        button5.grid(row=1,column=1,padx=5,pady=5)
+        button6=Button(frame4,text="Junior Fries Chiken\nPrice=109",bg="Red",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Junior Fries Chiken\n","109\n"))
+        button6.grid(row=1,column=2,padx=5,pady=5)
+        button7=Button(frame4,text="Veg United States of Punjab\nPrice=129",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Veg United States of Punjab\n","129\n"))
+        button7.grid(row=2,column=1,padx=5,pady=5)
+        
+    if n==2:
+        frame4.destroy()
+        frame4=LabelFrame(w,padx=61)
+        frame4.grid(row=3,column=0,padx=2)
+        button1=Button(frame4,text="Potato Crunch\nPrice=109",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Potato Crunch\n","109\n"))
+        button1.grid(row=0,column=0,padx=5,pady=5)
+        button2=Button(frame4,text="American Grilled Chicken\nPrice=149",bg="Red",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("American Grilled Chicken\n","149\n"))
+        button2.grid(row=0,column=1,padx=5,pady=5)
+        button3=Button(frame4,text="Chicken United States\nof Punjab\nPrice=179",bg="Red",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Chicken United States of Punjab\n","179\n"))
+        button3.grid(row=0,column=2,padx=5,pady=5)
+        button4=Button(frame4,text="Jattputt Chicken\nPrice=169",bg="Red",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Jattputt Chicken\n","169\n"))
+        button4.grid(row=1,column=0,padx=5,pady=5)
+        button5=Button(frame4,text="Udta Punjab 2.0\nPrice=159",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Udta Punjab 2.0\n","159\n"))
+        button5.grid(row=1,column=1,padx=5,pady=5)
+        button6=Button(frame4,text="Dum Aloo\nPrice=139",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Dum Aloo\n","139\n"))
+        button6.grid(row=1,column=2,padx=5,pady=5)
+        button7=Button(frame4,text="Amritsari Murgh Makhani\nPrice=179",bg="Red",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Amritsari Murgh Makhani\n","179\n"))
+        button7.grid(row=2,column=0,padx=5,pady=5)
+        button8=Button(frame4,text="Bunty Paapeh da Aloo\nPrice=149",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Bunty Paapeh da Aloo\n","149\n"))
+        button8.grid(row=2,column=1,padx=5,pady=5)
+        
+    if n==3:
+        frame4.destroy()
+        frame4=LabelFrame(w,padx=61)
+        frame4.grid(row=3,column=0,padx=2)
+        button1=Button(frame4,text="Dilli6 Fries(Regular)\nPrice=49",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Dilli6 Fries(Regular)\n","49\n"))
+        button1.grid(row=0,column=0,padx=5,pady=5)
+        button2=Button(frame4,text="Dilli6 Fries(Large)49\nPrice=99",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Dilli6 Fries(Large)\n","99\n"))
+        button2.grid(row=0,column=1,padx=5,pady=5)
+        button3=Button(frame4,text="Hot Shock Fries(Regular)\nPrice=49",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Hot Shock Fries(Regular)\n","49\n"))
+        button3.grid(row=0,column=2,padx=5,pady=5)
+        button4=Button(frame4,text="Hot Shock Fries(Large)\nPrice=99",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Hot Shock Fries(Large)\n","99\n"))
+        button4.grid(row=1,column=0,padx=5,pady=5)
+        button5=Button(frame4,text="Classic Salted Fries(Regular)\nPrice=49",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Classic Salted Fries(Regular)\n","49\n"))
+        button5.grid(row=1,column=1,padx=5,pady=5)
+        button6=Button(frame4,text="Classic Salted Fries(Large)\nPrice=99",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Classic Salted Fries(Large)\n","99\n"))
+        button6.grid(row=1,column=2,padx=5,pady=5)
+        button7=Button(frame4,text="Moroccon Fries(Regular)\nPrice=49",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Moroccon Fries(Regular)\n","49\n"))
+        button7.grid(row=2,column=0,padx=5,pady=5)
+        button8=Button(frame4,text="Moroccon Fries(Large)\nPrice=99",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Moroccon Fries(Large)\n","99\n"))
+        button8.grid(row=2,column=1,padx=5,pady=5)
+        
+    if n==4:
+        frame4.destroy()
+        frame4=LabelFrame(w,padx=60,pady=52)
+        frame4.grid(row=3,column=0,padx=2)
+        button1=Button(frame4,text="Shunya Cola\n(Zero Calories)\nPrice=58",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Shunya Cola(Zero Calories)\n","58\n"))
+        button1.grid(row=0,column=0,padx=5,pady=5)
+        button2=Button(frame4,text="Classic Lemon Ice Tea\nPrice=76",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Classic Lemon Ice Tea\n","76\n"))
+        button2.grid(row=0,column=1,padx=5,pady=5)
+        button3=Button(frame4,text="Brewhouse Forest\nBerry Ice Tea\nPrice=76",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Brewhouse Forest Berry Ice Tea\n","76\n"))
+        button3.grid(row=0,column=2,padx=5,pady=5)
+        button4=Button(frame4,text="Natural Mineral Water\nPrice=39",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Natural Mineral Water\n","39\n"))
+        button4.grid(row=1,column=0,padx=5,pady=5)
+        button5=Button(frame4,text="Brewhouse Peach Ice Tea\nPrice=76",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Brewhouse Peach Ice Tea\n","76\n"))
+        button5.grid(row=1,column=1,padx=5,pady=5)
+        
+    if n==5:
+        frame4.destroy()
+        frame4=LabelFrame(w,padx=234,pady=109)
+        frame4.grid(row=3,column=0,padx=2)
+        button1=Button(frame4,text="Chocolate Cake\nPrice=90",bg="Green",fg="White",borderwidth=6,width=20,height=5,command=lambda:text_1("Chocolate Cake\n","90\n"))
+        button1.grid(row=0,column=0)
+        
+#Order
+frame5=LabelFrame(w)
+frame5.grid(row=1,column=1)
+text1=Text(frame5,height=12,width=70)
+text1.grid(row=0,column=0)
+text2=Text(frame5,height=12,width=5)
+text2.grid(row=0,column=1)
+text3=Text(frame5,height=1,width=70)
+text3.grid(row=2,column=0)
+text3.insert(END,"Total Amount:")
+text4=Text(frame5,height=1,width=5)
+text4.grid(row=2,column=1)
+total=0
+def text_1(order,price):
+    global total
+    text1.insert(END,order)
+    text2.insert(END,price)               
+    total=total+eval(price)
+    text4.delete(1.0,END)
+    text4.insert(END,total*1.05)
+
+def payment(w):
+    frame6=LabelFrame(w)
+    frame6.grid(row=3,column=1)
+    label=Label(frame6,text="This Frame will Have QRs",width=80,height=19)
+    label.grid(row=0,column=0)
+    frame7=LabelFrame(w)
+    frame7.grid(row=4,column=1)
+    button=Button(frame7,text="Press when payment confirmed",borderwidth=8,command=lambda:confirm(frame6))
+    button.grid(row=0,column=0)
+
+def confirm(frame):
+    label1=Label(frame,text="***ORDER CONFIRMED***")
+    label1.grid(row=0,column=0)
+    
+#Modes of Payment
+frame5=LabelFrame(w,padx=32)
+frame5.grid(row=2,column=1)+n
+button1=Button(frame5,text="Cash",borderwidth=8,width=12,command=lambda:payment(w))
+button1.grid(row=0,column=0,padx=15,pady=10)
+button2=Button(frame5,text="Card",borderwidth=8,width=12,command=lambda:payment(w))
+button2.grid(row=0,column=1,padx=15,pady=10)
+button3=Button(frame5,text="UPI",borderwidth=8,width=12,command=lambda:payment(w))
+button3.grid(row=0,column=2,padx=15,pady=10)
+button4=Button(frame5,text="Paytm",borderwidth=8,width=12,command=lambda:payment(w))
+button4.grid(row=0,column=3,padx=15,pady=10)
+
+w.mainloop()
